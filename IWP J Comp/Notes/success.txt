@@ -1,0 +1,45 @@
+<?php
+    $title = "Success";
+    require_once 'Includes/header.php';
+    require_once 'Database/config.php';
+    require_once 'Database/students.php';
+    
+    if (isset($_POST['submit'])){
+       
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $dob = $_POST['dob'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $speciality = $_POST['speciality'];
+        $username = $_POST['regno'];
+        $password = $_POST['password'];
+
+        //Set the target directory for uploadind PDF files
+        $target = 'resume_upload/';
+        $original_file = $_FILES["resume"]["tmp_name"];
+        $extension = pathinfo($_FILES["resume"]["name"], PATHINFO_EXTENSION);
+        //basename() is a predefined function
+        // The super variable $_FILES is defined by two var - first is:
+        // form-control (here "resume", see name of input:file), and second is attribute
+        $destination_file = "$target$username.$extension";
+        //It is a PHP function to move the file to the destination
+        move_uploaded_file($original_file, $destination_file);
+
+        //$stud = new Student($pdo);
+        $issuccess1 = $crud->insert($fname, $lname, $dob, $speciality, $email, $phone, $username, $destination_file);
+        $issuccess2 = $stud->new_user($username, $password);
+         //$res = $stud->new_user(strval($username), strval($password));
+         //Call function to insert and track if success
+        if($issuccess1 && $issuccess2){
+            echo "<h1 class='text-center text-success'>You have been registered!<br/>Congratulations!!!</h1>";
+        }
+        else{
+            include 'Includes/error.php';
+        }
+    }
+?>
+
+<?php
+    require_once 'Includes/footer.php'; 
+?>

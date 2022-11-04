@@ -1,0 +1,52 @@
+<?php
+    $title = "Student View";
+    require_once 'Includes/header.php';
+    require_once 'Database/config.php';
+    
+    if(isset($_GET['id']))
+    {
+      $id = $_GET['id'];
+      $response = $crud->get_student($id);
+    }
+    else
+    {
+        include 'Includes/error.php';
+    }
+?>
+<br>
+<div class="card box" style="width: 18rem;">
+    <div class="card-body">
+        <h3 class="card-title register-head">Name: 
+            <?php
+                echo $response['firstname'].' '.$response['lastname'];
+            ?>
+        </h3>
+        <p class="card-text register-text">
+            <?php
+                echo "Registration no. : ".$response['regno'];
+            ?>
+        </p>
+        <p class="card-text register-text">
+            <?php
+                echo "Speciality : ".$response['name'];
+            ?>
+        </p>
+        <p class="card-text register-text">
+            <?php
+                echo "Email ID: : ".$response['email'];
+            ?>
+        </p>
+        <p class="card-text register-text">
+            <?php
+                echo "Phone Number: ".$response['phone'];
+            ?>
+        </p>
+    </div> 
+    <a href="update.php?id=<?php echo $response['student_id'];?>&usrnm=<?php echo $response['regno'];?>" class="btn btn-warning">Edit</a>
+    <br>
+    <a href="remove.php?id=<?php echo $response['student_id'];?>&usrnm=<?php echo $response['regno'];?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')">Del</a>
+</div>
+<br>
+<?php 
+    require_once 'Includes/footer.php'; 
+?>

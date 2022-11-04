@@ -1,0 +1,33 @@
+<?php
+    $title = "Delete Record";
+    require_once 'Database/config.php'; 
+    require_once 'Database/crud.php';
+    require_once 'Includes/session.php';
+
+    if(!$_GET['id'])
+    {
+        //echo 'Error';
+        include 'Includes/error.php';
+        header("Location: record.php");
+    }
+    else
+    {
+        //GET the id
+        $id = $_GET['id'];
+        $usrnm = $_GET['usrnm'];
+        //Call the delete function for 'id'
+        $result = $crud->remove($id, $usrnm);
+
+        //Redirect
+        if(!$result)
+        {
+            echo "<div class='alert alert-danger'>You cannot modify others' accounts</div>";
+        }
+        else
+        {
+            header("Location: record.php");
+            // include 'Includes/error1.php';
+            //header("Location: record.php");
+        }
+    }
+?>

@@ -1,0 +1,149 @@
+/* --------Designing the HTML and Body --------*/
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.container-index{
+    background-image: url("blocks.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: auto;
+    height: 80.5vh;
+}
+
+/* --------Designing the upSKILL Card --------*/
+
+.card-index{
+    border: 2px solid palevioletred;
+    background: transparent;
+    width:max-content;
+    height: fit-content;
+    margin: auto;
+}
+
+#upskill{
+    font-size: 3rem;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqF7mNKL6KDNKSFFpY-BMPDWeYEp2Ci2Y-Yw8hSq7nJwu9YW0x4_xQrtWFS4OIvPP51FU&usqp=CAU);
+    background-size: 40%;
+    background-position: 50% 50%;
+    -webkit-background-clip: text;
+    color: hsla(0, 0%, 0%, 0.08);
+    animation: zoomout 2s ease 500ms forwards;
+    margin: 5px;
+}
+
+#moto{
+    font-weight: 500;
+    text-align: left;
+    color: rgb(236, 166, 189);
+    margin: -2.0rem 0 1rem 0;
+    font-size:2.0rem;
+    padding: 64px;
+    background: linear-gradient(to right, hsl(0, 100%, 75%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 100%, 75%) 20%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s infinite linear;
+}
+
+@keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 600px;
+    }
+    100% {
+      background-position: 600px;
+    }
+}
+
+/* --------Designing the Buttons --------*/
+.btn{
+    border:0px;
+    margin: 0px 2px 10px 0px;
+}
+
+.btn a{
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 20px 8px 20px;
+    font-weight: 500;
+    margin: 5px; 
+}
+
+#dark{
+    text-transform: uppercase;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(222, 51, 108);
+}
+
+#dark:hover{
+    background-color: red;
+    border: 1px solid black;
+    transition: background-color 2s;
+    font-size: larger;
+}
+
+#light{
+    text-transform: uppercase;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid rgb(236, 166, 189);
+    transition: background-color 2s;
+}
+
+#light:hover{
+    background-color: red;
+    font-size: larger;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-reg{
+    width: fit-content;
+    padding: 15px;
+    margin: 5px;
+}
+
+/* -------- Responsiveness --------*/
+@media screen and (max-width: 700px) {
+
+    #upskill{
+        font-size: 2rem;
+        letter-spacing: 0;
+        text-align: center;
+    }
+
+    #moto{
+        font-size: 1rem;
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .btn{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn a{
+        padding: 5px;
+        margin: 3px;
+    }
+
+    .button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+

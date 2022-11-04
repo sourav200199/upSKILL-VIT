@@ -1,0 +1,49 @@
+<?php
+    $title = "Login";
+    require_once 'Includes/header.php';
+    require_once 'Database/students.php';
+    require_once 'Database/config.php'; 
+
+    //Another method of submit
+    //The first method is done using isset, see the 'success.php'
+    //This method is more generic as it does not depend on any value but checks if there is any POST method
+    if($_SERVER['REQUEST_METHOD'] == 'POST')  
+    {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $new_p = sha1($username.$password);
+        
+        //Check with the hashed password in the database
+        $res = $stud->get_user($username, $new_p); //invoking 'stud' from the config.php
+        if(!$res)
+        {
+            echo "<div class='alert alert-danger'>Credential(s) incorrect</div>";
+        }
+        else{
+            $_SESSION['username'] = $username;
+            $_SESSION['uid'] = $res['login_id']; //'login_id' of the login table, as result is an object of Student class- see 'config.php' and 'student.php'
+            header("Location: record.php");
+        }
+    }
+?>
+<h1 class="text-center register-head"><?php echo $title; ?></h1>
+<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post" class="box">
+    <table class="table table-sm">
+        <tr>
+            <td><label for="username" class="register-text">*Username: </label></td>
+            <td><input type="text" name="username" class="form-control" id="username" value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['username'];?>"></td>
+        </tr>
+        <tr>
+            <td><label for="password" class="register-text">*Password: </label></td>
+            <td><input type="password" name="password" class="form-control" id="password"></td>
+        </tr>
+    </table>
+    <table>
+        <input type="submit" value="login" class="btn btn-primary btn-block"><br>
+    </table>
+</form>
+<br>
+<br>
+<?php
+    include_once 'Includes/footer.php';
+?>

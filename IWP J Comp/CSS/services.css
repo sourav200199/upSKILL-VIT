@@ -1,0 +1,90 @@
+.body-wrap {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* .body-wrap h1 {
+  color: white;
+  display: inline-block;
+  text-transform: uppercase;
+  border-bottom: 3px solid white;
+  font-size: 50px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  margin-top: 40px;
+} */
+
+.body-elements {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.service-info {
+  display: inline-block;
+  width: calc(100% / 3);
+  margin: 0 -2px;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: 0.4s;
+}
+
+.service-info:hover {
+  background-color: rgb(62, 32, 60);
+  color: whitesmoke;
+}
+
+.service-info i {
+  color: rgb(209, 148, 83);
+  font-size: 34px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.service-info h2 {
+  color: rgb(254, 196, 216);
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+}
+
+.service-info p {
+  color: rgb(231, 213, 240);
+  font-size: 1.2 rem;
+  font-weight: 500;
+}
+
+/* End of Main content styling */
+
+@media screen and (max-width: 800px) {
+  .body-wrap h1 {
+    font-size: 40px;
+  }
+  .service-info {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .service-info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .items {
+    position: fixed;
+    left: -100;
+    top: 50px;
+    flex-direction: column;
+    background-color: palevioletred;
+    color: white;
+    width: 100%;
+    text-align: center;
+    transition: 1s;
+  }
+}

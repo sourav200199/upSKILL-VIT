@@ -1,0 +1,83 @@
+<?php
+    $title = "Update Record";
+    require_once 'Includes/header.php';
+    require_once 'Includes/session.php';
+    require_once 'Database/config.php'; 
+
+    $response = $crud->get_speciality();
+    if(!isset($_GET['id']))
+    {
+        //echo 'Error';
+        include 'Includes/error.php';
+        //header("Location: record.php");
+    }
+    else
+    {
+        $id = $_GET['id'];
+        $student = $crud->get_student($id);
+
+?>
+
+    <h1 class="text-center register-head">Update Record</h1>
+
+    <form method="post" action="success1.php">
+        <input type="hidden" name="id" value="<?php echo $student['student_id']?>">
+        <div class="form-group">
+            <label for="firstname" class="register-text">First Name:</label>
+            <input type="text" class="form-control" id="firstname" value="<?php echo $student['firstname'];?>" name="fname">
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="lastname" class="register-text">Last Name:</label>
+            <input type="text" class="form-control" id="lastname" value="<?php echo $student['lastname'];?>" name="lname">
+        </div>
+        <br/> 
+        <div class="form-group">
+            <label for="lastname" class="register-text">Date of birth:</label>
+            <input type="date" class="form-control" id="dob" name="dob">
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="speciality" class="register-text">Speciality:</label>
+            <select class="form-control" id="speciality" name="speciality">
+                <?php
+                  while ($r = $response->fetch(PDO::FETCH_ASSOC)){
+                ?>
+                <option value="<?php echo $r['speciality_id']?>" <?php if($r['speciality_id'] == $student['speciality_id']) echo 'Selected'; ?>>
+                    <?php echo $r['name']; ?>
+                </option>
+                <?php  } ?>  
+            </select>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="email" class="register-text">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="phone" class="register-text">Phone No.:</label>
+            <input type="text" class="form-control" id="phone" aria-describedby="phoneHelp" name="phone">
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="lastname" class="register-text">Register No.:</label>
+            <input type="text" class="form-control" id="regno" value="<?php echo $student['regno'];?>" name="regno">
+        </div>
+        <br>
+        <div class="custom-file">
+            <label class="custom-file-label register-text" for="resume">*Upload Resume:</label>
+            <br>
+            <input type="file" accept=".pdf" class="custom-file-input" id="resume" name="resume" required>
+            <br>
+            <small id="phoneHelp" class="form-text text-danger register-text">Only PDF files are accepted.</small>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success" name="update">Update Changes</button>
+        <button type="reset" class="btn btn-primary" name="reset">Reset</button>
+    </form>
+    <?php }?>
+<?php 
+    require_once 'Includes/footer.php'; 
+?>
+    

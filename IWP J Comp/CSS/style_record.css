@@ -1,0 +1,17 @@
+/*-------- Designing the HTML and Body --------*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.box-table {
+  background-color: rgb(181, 127, 167);
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* -------- Designing the table --------*/
+.table{
+    overflow: auto;
+}

@@ -1,0 +1,57 @@
+<?php
+    $title = "Services";
+    include 'Includes/header.php';
+?>
+<div class="body-wrap">
+      <h1 class="register-head">Services</h1>
+
+      <div class="body-elements">
+        <div class="service-info">
+          <i class="fa-solid fa-square-poll-horizontal"></i>
+          <h2>Skills > CGPA</h2>
+          <p>
+            Employers evaluate each candidate based on their skills and traits,
+            irrespective of their specialization or desired field.
+          </p>
+        </div>
+
+        <div class="service-info">
+          <i class="fa-solid fa-people-group"></i>
+          <h2>Real World Experience</h2>
+          <p>
+            Internships provide students with an invaluable early, hands-on
+            experience of how everything works in the real world.
+          </p>
+        </div>
+
+        <div class="service-info">
+          <i class="fa-solid fa-share-nodes"></i>
+          <h2>Vast Network</h2>
+          <p>
+            Find contacts, investigate companies, join industry associations and
+            much more. We are providing a platform for students to network.
+          </p>
+        </div>
+
+        <div class="service-info">
+          <i class="fa-solid fa-address-card"></i>
+          <h2>Pool of Candidates</h2>
+          <p>
+            Recruiters can search for potential candidates from a pool of
+            candidates showcasing their profile, expertise and recommendations.
+          </p>
+        </div>
+
+        <div class="service-info">
+          <i class="fa-sharp fa-solid fa-user-graduate"></i>
+          <h2>Discover Yourself</h2>
+          <p>
+            Through the various opportunites obtained, a student gets a better
+            understanding of themselves and also improve in the process.
+          </p>
+        </div>
+      </div>
+    </div>
+<?php 
+    require_once 'Includes/footer.php'; 
+?>
