@@ -39,9 +39,7 @@ $response = $crud->get_record();
                         </td>
                         </p>
                         <td>
-                            <span><a href="student_view.php?id=<?php echo $s['student_id']; ?>" class="btn btn-primary">View</a></span>
-                            <a href="update.php?id=<?php echo $s['student_id']; ?>&usrnm=<?php echo $s['regno']; ?>" class="btn btn-warning">Edit</a></span>
-                            <a href="remove.php?id=<?php echo $s['student_id']; ?>&usrnm=<?php echo $s['regno']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')" name="del">Del</a></span>
+                            <span><a href="students_view.php?id=<?php echo $s['regno']; ?>" class="btn btn-primary">View</a></span>
                         </td>
                     </tr>
                 <?php } ?>

@@ -7,11 +7,11 @@
 }
 
 .container-index{
-    background-image: url("blocks.jpg");
+    /* background-image: url("blocks.jpg"); */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: auto;
+    margin: auto;
     height: 80.5vh;
 }
 
@@ -27,6 +27,7 @@
 
 #upskill{
     font-size: 3rem;
+    font-weight: 500;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqF7mNKL6KDNKSFFpY-BMPDWeYEp2Ci2Y-Yw8hSq7nJwu9YW0x4_xQrtWFS4OIvPP51FU&usqp=CAU);

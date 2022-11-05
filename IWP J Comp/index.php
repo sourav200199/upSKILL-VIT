@@ -16,7 +16,7 @@ $img = "Images/blocks.jpg"; ?>
     <?php include 'CSS/style_index.css'; ?>
 </style> -->
 
-<body >
+<body id="body-index">
     <div class="container-index">
         <div class="card-index">
             <h1 id="upskill">upSKILL VIT</h1>
@@ -25,7 +25,7 @@ $img = "Images/blocks.jpg"; ?>
                 Get Hired. <br>
             </p>
             <div class="btn">
-                <a id="light" href="register.php">Sign UP</a>
+                <a id="light" href="register_employer.php">Sign UP</a>
                 <a id="dark" href="login.php">Login</a>
             </div>
         </div>

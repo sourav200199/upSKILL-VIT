@@ -10,7 +10,7 @@
 
 section{
     align-items: center;
-    background:linear-gradient(-30deg,rgb(214, 31, 92) 0%,rgb(247, 95, 146) 50%, #000000 50%, #252424 100%);
+    /* background:linear-gradient(-30deg,rgb(214, 31, 92) 0%,rgb(247, 95, 146) 50%, #000000 50%, #252424 100%); */
 }
 
 .container-login{

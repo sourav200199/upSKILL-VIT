@@ -1,0 +1,13 @@
+#edit-body{
+    background: linear-gradient(-45deg, #f60773, #e51364, #3c0e3c, #000000);
+    background-size: cover;
+}
+
+.back-a{
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+}
+.back-a:hover{
+    color: white;
+}

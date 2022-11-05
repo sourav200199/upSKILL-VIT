@@ -1,0 +1,18 @@
+#student-body{
+    background: linear-gradient(-45deg, #f60773, #e51364, #3c0e3c, #000000);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* --------Designing the Card --------*/
+.box{
+    background-color: transparent;
+    border: 3px solid white;
+    margin: auto;
+}
+
+.student-head, .student-text{
+    color: white;
+    text-align: center;
+}

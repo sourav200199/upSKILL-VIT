@@ -78,13 +78,15 @@
 
         public function get_student($id){
             try{
-                $sql = "SELECT * FROM `student` st inner join speciality sp on st.speciality_id = sp.speciality_id WHERE student_id = :id";
+                $sql = "SELECT * FROM `student` st inner join speciality sp on st.speciality_id = sp.speciality_id WHERE regno = :id";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':id',$id);
                 $stmt->execute();
-                $response = $stmt->fetch();
+                $response = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 return $response;
+                // $rec = $this->db->query($sql);
+                // return $rec;
             }
             catch (PDOException $e) {
                 echo $e->getMessage();
@@ -92,23 +94,22 @@
             }
         }
 
-        public function update_student($id, $fname, $lname, $dob, $speciality, $email, $phone, $regno, $filepath)
+        public function update_student($id, $fname, $lname, $dob, $email, $phone, $speciality, $filepath)
         {
             try
             {
-                if($_SESSION['username'] == $regno||$_SESSION['username'] == "admin")
+                if($_SESSION['username'] == $id||$_SESSION['username'] == "admin")
                 {
-                    $sql = "UPDATE `student` SET `firstname`= :fname,`lastname`= :lname,`dob`= :dob,`speciality_id`= :speciality,`email`= :email,`phone`= :phone,`regno`= :regno,`filepath`= :filepath WHERE `student_id`= :id";
+                    $sql = "UPDATE `student` SET `firstname`= :fname,`lastname`= :lname,`dob`= :dob, `email`= :email,`phone`= :phone, `speciality_id`= :speciality, `filepath`= :filepath WHERE `regno`= :id";
                     $stmt = $this->db->prepare($sql);
 
-                    $stmt->bindparam(':id',$id);
                     $stmt->bindparam(':fname',$fname);
                     $stmt->bindparam(':lname',$lname);
                     $stmt->bindparam(':dob',$dob);
+                    $stmt->bindparam(':id',$id);
                     $stmt->bindparam(':email',$email);
                     $stmt->bindparam(':phone',$phone);
                     $stmt->bindparam(':speciality',$speciality);
-                    $stmt->bindparam(':regno',$regno);
                     $stmt->bindparam(':filepath',$filepath);
 
                     $stmt->execute();

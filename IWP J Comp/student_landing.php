@@ -4,7 +4,7 @@ require_once 'Database/config.php';
 require_once 'Includes/authentication_check.php';
 require_once 'Database/crud.php';
 require_once 'Includes/session.php';
-$response = $crud->get_record();
+$response = $crud->get_student($_SESSION['username']);
 ?>
 <?php require_once 'Includes/header.php'; ?>
 <body>
@@ -22,9 +22,6 @@ $response = $crud->get_record();
                 echo "<div class='alert alert-danger'>Error in deleting account.</div>";
             } else {
                 echo "<div class='alert alert-danger'>Deleted Successfully</div>";
-                // header("Location: record.php");
-                // include 'Includes/error1.php';
-                //header("Location: record.php");
             }
             } 
         ?>
@@ -40,7 +37,7 @@ $response = $crud->get_record();
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque molestiae eius explicabo mollitia tempore reiciendis, vel, sequi.
                     </p>
-                    <a href="#" class="btn-landing">Edit</a>
+                    <a href="edit_record.php?id=<?php echo $response['student_id'];?>" class="btn-landing">Edit Profile</a>
                 </div>
             </div>
             <div class="card">
@@ -52,7 +49,7 @@ $response = $crud->get_record();
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque molestiae eius explicabo mollitia tempore reiciendis, vel, sequi.
                     </p>
                     <!-- <a href="#" class="btn">Delete</a> -->
-                    <form method="POST"><button type="submit" class="btn-landing" id="btn-delete" name="btn-delete">Delete</button></form>
+                    <form method="POST"><button type="submit" class="btn-landing" id="btn-delete" name="btn-delete">Delete Record</button></form>
                 </div>
             </div>
             <div class="card">
@@ -63,7 +60,7 @@ $response = $crud->get_record();
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque molestiae eius explicabo mollitia tempore reiciendis, vel, sequi.
                     </p>
-                    <a href="#" class="btn-landing">Update</a>
+                    <a href="#" class="btn-landing">Update Password</a>
                 </div>
             </div>
             <div class="card">

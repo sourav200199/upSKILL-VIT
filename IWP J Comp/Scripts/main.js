@@ -19,3 +19,29 @@ burger.addEventListener('click',()=>{
 //     direction: 'alternate',
 //     loop: true
 //   });
+
+VANTA.FOG({
+    el: "#body-index",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    highlightColor: 0x0,
+    midtoneColor: 0x220c1b,
+    lowlightColor: 0x911654,
+    baseColor: 0xd21ab1
+  })
+
+  VANTA.FOG({
+    el: "#body-login",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    highlightColor: 0x0,
+    midtoneColor: 0x220c1b,
+    lowlightColor: 0x911654,
+    baseColor: 0xd21ab1
+  })

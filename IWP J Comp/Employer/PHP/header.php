@@ -72,7 +72,7 @@
               else
               { 
                 ?>
-                <a class="nav-item reg-login" href="logout.php" class="register-text">Logout: <span class="sr-only register-text"><?php echo $_SESSION['username'];?></span></a>
+                <a class="nav-item reg-login" href="logout.php" class="register-text">Logout: <span class="sr-only class="register-text""><?php echo $_SESSION['username'];?></span></a>
                 <?php
               }
               ?>
