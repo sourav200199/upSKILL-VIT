@@ -76,31 +76,33 @@ svg{
 
 /* --------Designing the Footer --------*/
 .footer{
+    position: fixed;
     bottom: 0;
+    right: 0;
     background-color: black;
     padding: 10px 0px 10px 0px;
     text-align: center;
-    width: 100%;
+    width: fit-content;
 }
 
 .footer p{
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     color: white;
     font-weight: 500;
 }
 
 .foot-items a{
-    padding: 0px 10px 0px 10px;
+    padding: 0px 1px 0px 1px;
 }
 
 .footer a img{
     padding: 1px;
-    border: 3px solid white;
+    border: 1px solid white;
     border-radius: 50%;
 }
 
 .footer span a{
-    padding: 10px;
+    padding: 1px;
 }
 
 @media screen and (max-width: 700px) {

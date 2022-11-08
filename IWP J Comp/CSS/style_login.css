@@ -240,6 +240,10 @@ h2
         font-size: 30px;
         margin: 10px;
     }
+
+    .register-text{
+        font-size: 0.9rem;
+    }
 }
 
 

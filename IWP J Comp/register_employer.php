@@ -19,7 +19,7 @@
         $sql = "INSERT INTO company_credentials (c_name, cid, password, doh, c_email) VALUES ('$username', '$cid', '$e_pswd', '$doh', '$email')";
         $result = mysqli_query($con, $sql);
 
-        $table = "CREATE TABLE $username (
+        $table = "CREATE TABLE $cid (
             job_id INT(6) AUTO_INCREMENT PRIMARY KEY,
             student_regno VARCHAR(9) NOT NULL,
             student_name VARCHAR(100) NOT NULL,
@@ -70,8 +70,9 @@
         </div>
         <br/>
         <div class="button">
-            <button type="submit" class="btn btn-success btn-reg" name="register_emp">Submit</button>
-            <button type="reset" class="btn btn-primary btn-reg" name="reset">Reset</button>
+            <button type="submit" class="btn btn-success" name="register_emp" style="margin: 2px">Submit</button>
+            <button type="reset" class="btn btn-primary" name="reset" style="margin: 2px">Reset</button>
+            <button class="btn btn-danger" name="back" style="margin: 2px"><a href="signup.php" class="back-a" >Back</a></button>
         </div>
     </form>
 <?php 

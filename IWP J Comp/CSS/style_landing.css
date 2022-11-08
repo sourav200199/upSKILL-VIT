@@ -18,12 +18,13 @@
   }
 
   /* ---------Designing the Container and Cards ----------*/
-  
-  .container-landing {
-    background: linear-gradient(-45deg, #f60773, #e51364, #3c0e3c, #000000);
+
+  #student-landing-body{
+    background: linear-gradient(-45deg, #791643, #610b2c, #3c0e3c, #000000);
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
-    margin: auto;
+    height: 100vh;
+    width: 100vw;
   }
 
   .heading {
@@ -34,6 +35,7 @@
   
   .box-row {
     display: flex;
+    height: fit-content;
     flex-direction: row;
     justify-content: space-around;
     flex-flow: wrap;
@@ -103,11 +105,6 @@
     .container-landing {
       width: 100%;
     }
-  
-    /* .heading {
-      padding: 20px;
-      font-size: 20px;
-    } */
   
     .card {
       width: 80%;

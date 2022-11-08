@@ -1,6 +1,8 @@
 <?php
     $title = "Student View";
     require_once 'Includes/header.php';
+    require_once 'Includes/session.php';
+    require_once 'Includes/authentication_check.php';
     require_once 'Database/config.php';
     
     if(isset($_GET['id']))

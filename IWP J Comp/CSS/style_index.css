@@ -18,7 +18,10 @@
 /* --------Designing the upSKILL Card --------*/
 
 .card-index{
-    border: 2px solid palevioletred;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    /* border: 2px solid palevioletred; */
     background: transparent;
     width:max-content;
     height: fit-content;
@@ -27,16 +30,15 @@
 
 #upskill{
     font-size: 3rem;
-    font-weight: 500;
+    font-weight: 700;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqF7mNKL6KDNKSFFpY-BMPDWeYEp2Ci2Y-Yw8hSq7nJwu9YW0x4_xQrtWFS4OIvPP51FU&usqp=CAU);
+    background-color: rgb(215, 199, 199);
     background-size: 40%;
     background-position: 50% 50%;
     -webkit-background-clip: text;
     color: hsla(0, 0%, 0%, 0.08);
     animation: zoomout 2s ease 500ms forwards;
-    margin: 5px;
 }
 
 #moto{
@@ -45,7 +47,7 @@
     color: rgb(236, 166, 189);
     margin: -2.0rem 0 1rem 0;
     font-size:2.0rem;
-    padding: 64px;
+    padding: 64px 64px 64px 0px;
     background: linear-gradient(to right, hsl(0, 100%, 75%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 100%, 75%) 20%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -87,9 +89,7 @@
 
 #dark:hover{
     background-color: red;
-    border: 1px solid black;
-    transition: background-color 2s;
-    font-size: larger;
+    /* font-size: larger; */
 }
 
 #light{
@@ -102,7 +102,7 @@
 
 #light:hover{
     background-color: red;
-    font-size: larger;
+    /* font-size: larger; */
 }
 
 .button{

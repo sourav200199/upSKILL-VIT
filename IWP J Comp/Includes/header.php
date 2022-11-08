@@ -1,6 +1,4 @@
 <?php
-  //This file has to do with session start/resume
-  //Including it in the header file will include it to all other pages
   require_once 'Includes/session.php';
 ?>
 <!doctype html>
@@ -12,12 +10,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="CSS/style_index.css">
+    <link rel="stylesheet" href="CSS/style_edit.css">
     <link rel="stylesheet" href="CSS/style_login.css">
     <link rel="stylesheet" href="CSS/style_landing.css">
     <link rel="stylesheet" href="CSS/style_record.css">
-    <link rel="stylesheet" href="CSS/style_edit.css">
     <link rel="stylesheet" href="CSS/style_register.css">
     <link rel="stylesheet" href="CSS/style_view.css">
+    <link rel="stylesheet" href="CSS/style_signup.css">
+    <link rel="stylesheet" href="CSS/style_password.css">
+    <link rel="stylesheet" href="CSS/style_emp_studentlist.css">
+    <link rel="stylesheet" href="CSS/style_emp_landing.css">
     <link rel="stylesheet" href="CSS/style_header.css">
   </head>
   <header>
@@ -55,7 +57,7 @@
             if(!isset($_SESSION['uid']))
             {
               echo "<li class='nav-item nav-link'><a href='index.php'>Home</a></li>";
-              echo "<li class='nav-item'><a href='https://vtop.vit.ac.in/vtop/login'>Vtop Login</a></li>";
+              echo "<li class='nav-item'><a href='https://vtop.vit.ac.in/vtop/login' target='_blank'>Vtop Login</a></li>";
               echo "<li class='nav-item'><a href='about.php'>About Us</a></li>";
               echo "<li class='nav-item'><a href='services.php'>Services</a></li>";
             }

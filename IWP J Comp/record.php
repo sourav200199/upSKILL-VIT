@@ -7,43 +7,41 @@ $response = $crud->get_record();
 
 <?php require_once 'Includes/header.php'; ?>
 
-<body>
+<body id="record-body">
+    <br>
+    <br>
+    <a href="student_landing.php" style="margin: 10px"><button class="btn btn-primary">Back to Home</button></a>
+    <br>
+    <br>
     <div class="box-table">
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col" class="table-head">Registration </th>
-                    <th scope="col" class="table-head">Name</th>
-                    <th scope="col" class="table-head">Speciality</th>
-                    <th scope="col" class="table-head">Options</th>
+                    <th class="table-head">Registration </th>
+                    <th class="table-head">Name</th>
+                    <th class="table-head">Speciality</th>
+                    <th class="table-head">Options</th>
                 </tr>
             </thead>
-            <tbody>
                 <?php
                 while ($s = $response->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                     <tr>
-                        <td>
-                            <p class="register-text">
+                        <td class="register-text">
                                 <?php echo $s['regno']; ?>
-                            </p>
                         </td>
-                        <td>
-                            <p class="register-text">
+                        <td class="register-text">
                                 <?php echo $s['firstname'] . " " . $s['lastname']; ?>
                         </td>
-                        </p>
-                        <td>
+                        <td class="register-text">
                             <p class="register-text">
                                 <?php echo $s['name']; ?>
                         </td>
-                        </p>
                         <td>
                             <span><a href="students_view.php?id=<?php echo $s['regno']; ?>" class="btn btn-primary">View</a></span>
                         </td>
                     </tr>
                 <?php } ?>
-            </tbody>
         </table>
     </div>
 <?php

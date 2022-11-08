@@ -1,6 +1,13 @@
+html{
+    height: 100vh;
+}
+
 #edit-body{
-    background: linear-gradient(-45deg, #f60773, #e51364, #3c0e3c, #000000);
-    background-size: cover;
+    background: linear-gradient(-45deg, #791643, #610b2c, #3c0e3c, #000000);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    height: 100vh;
+    width: 100vw;
 }
 
 .back-a{
@@ -11,3 +18,34 @@
 .back-a:hover{
     color: white;
 }
+
+#editform{
+    overflow: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.input{
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.button-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 350px){
+    .button-holder{
+        flex-direction: column;
+    }
+}
+    

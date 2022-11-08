@@ -1,5 +1,5 @@
 <?php
-$title = "Landing";
+$title = "Student_Landing";
 require_once 'Database/config.php';
 require_once 'Includes/authentication_check.php';
 require_once 'Database/crud.php';
@@ -7,7 +7,7 @@ require_once 'Includes/session.php';
 $response = $crud->get_student($_SESSION['username']);
 ?>
 <?php require_once 'Includes/header.php'; ?>
-<body>
+<body id="student-landing-body">
     <div class="container-landing">
         <br>
         <?php
@@ -35,9 +35,10 @@ $response = $crud->get_student($_SESSION['username']);
                 </div>
                 <div class="card-body">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque molestiae eius explicabo mollitia tempore reiciendis, vel, sequi.
+                        Employers ask for your most recent resume and other details. 
+                        Make sure you update it time to time so that your most recent profile is displayed.
                     </p>
-                    <a href="edit_record.php?id=<?php echo $response['student_id'];?>" class="btn-landing">Edit Profile</a>
+                    <a href="edit_record.php?" class="btn-landing">Edit Profile</a>
                 </div>
             </div>
             <div class="card">
@@ -46,7 +47,8 @@ $response = $crud->get_student($_SESSION['username']);
                 </div>
                 <div class="card-body">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque molestiae eius explicabo mollitia tempore reiciendis, vel, sequi.
+                        To remove your name from the list of students who has registered for internship, click on the button below.
+                        <br><br><br>
                     </p>
                     <!-- <a href="#" class="btn">Delete</a> -->
                     <form method="POST"><button type="submit" class="btn-landing" id="btn-delete" name="btn-delete">Delete Record</button></form>
@@ -58,9 +60,10 @@ $response = $crud->get_student($_SESSION['username']);
                 </div>
                 <div class="card-body">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque molestiae eius explicabo mollitia tempore reiciendis, vel, sequi.
+                        Remember not to share your password with anyone else! You can change your password by clicking on the button below.
+                        <br><br>
                     </p>
-                    <a href="#" class="btn-landing">Update Password</a>
+                    <a href="updatepassword.php" class="btn-landing">Update Password</a>
                 </div>
             </div>
             <div class="card">
@@ -69,7 +72,8 @@ $response = $crud->get_student($_SESSION['username']);
                 </div>
                 <div class="card-body">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque molestiae eius explicabo mollitia tempore reiciendis, vel, sequi.
+                        You can view the list of students from the university who has applied for internships by clicking the button below.
+                        <br><br>
                     </p>
                     <a href="record.php" class="btn-landing">View Students' List</a>
                 </div>

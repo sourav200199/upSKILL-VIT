@@ -5,21 +5,26 @@
     require_once 'Database/config.php'; 
 
     $response = $crud->get_speciality();
-    // $id = "";
-    // if(!isset($_GET['id']))
-    //     echo 'Error';
-    //     //include 'Includes/error.php';
-
-    // else
-    //     $id = $_GET['id'];
     
     $student = $crud->get_student($_SESSION['username']);
+    if($student == false)
+    {
+        $student['firstname'] = "";
+        $student['lastname'] = "";
+        $student['dob'] = "";
+        $student['email'] = "";
+        $student['phone'] = "";
+        $student['cgpa'] = 0.0;
+        $student['speciality_id'] = 1;
+
+    }
     if (isset($_POST['update']))
     {
         //Get values from new POST
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $dob = $_POST['dob'];
+        $cgpa = (float)$_POST['cgpa'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $speciality = $_POST['speciality'];
@@ -36,48 +41,45 @@
         unlink($destination_file);
         move_uploaded_file($original_file, $destination_file);
 
-        $result = $crud->update_student($username, $fname, $lname, $dob, $email, $phone, $speciality, $destination_file);
+        $result = $crud->update_student($username, $fname, $lname, $dob, $cgpa, $email, $phone, $speciality, $destination_file);
         if($result)
         {
-            //Call the CRUD function
-            //header("Location: record.php");
             echo "<div class='alert alert-danger'>Updated Successfully</div>";
         }
         else
         {
             echo "<div class='alert alert-danger'>ERROR: Cannot Update</div>";
-            //include 'Includes/error1.php';
-            //header("Location: record.php");
         }
     }
-    // else{
-    //     include 'Includes/error.php';
-    //     //header("Location: record.php");
-    // }
 ?>
 <body id="edit-body">
     <br>
     <h1 class="text-center register-head">Update Record</h1>
-
-    <form method="post" enctype="multipart/form-data">
+    <br>
+    <form id="editform" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="firstname" class="register-text">First Name:</label>
-            <input type="text" class="form-control" id="firstname" name="fname" value="<?php echo $student['firstname'];?>">
+            <input type="text" class="input" id="firstname" name="fname" value="<?php echo $student['firstname'];?>">
         </div>
         <br/>
         <div class="form-group">
             <label for="lastname" class="register-text">Last Name:</label>
-            <input type="text" class="form-control" id="lastname" name="lname" value="<?php echo $student['lastname'];?>"> 
+            <input type="text" class="input" id="lastname" name="lname" value="<?php echo $student['lastname'];?>"> 
         </div>
         <br/> 
         <div class="form-group">
             <label for="lastname" class="register-text" value="<?php echo $student['dob'];?>">Date of birth:</label>
-            <input type="date" class="form-control" id="dob" name="dob">
+            <input type="date" class="input" id="dob" name="dob">
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="lastname" class="register-text" value="<?php echo $student['dob'];?>">CGPA:</label>
+            <input type="text" class="input" id="cgpa" name="cgpa">
         </div>
         <br/>
         <div class="form-group">
             <label for="speciality" class="register-text">Speciality:</label>
-            <select class="form-control" id="speciality" name="speciality">
+            <select id="speciality" class="input" name="speciality">
                 <?php
                   while ($r = $response->fetch(PDO::FETCH_ASSOC)){
                 ?>
@@ -90,12 +92,12 @@
         <br/>
         <div class="form-group">
             <label for="email" class="register-text">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" value="<?php echo $student['email'];?>">
+            <input type="email" class="input" id="email" aria-describedby="emailHelp" name="email" value="<?php echo $student['email'];?>">
         </div>
         <br/>
         <div class="form-group">
             <label for="phone" class="register-text">Phone No.:</label>
-            <input type="text" class="form-control" id="phone" aria-describedby="phoneHelp" name="phone" value="<?php echo $student['phone'];?>">
+            <input type="text" class="input" id="phone" aria-describedby="phoneHelp" name="phone" value="<?php echo $student['phone'];?>">
         </div>
         <br/>
             <label class="custom-file-label register-text" for="resume">*Update Resume:</label>
@@ -104,11 +106,12 @@
             <br>
             <small id="phoneHelp" class="form-text text-danger register-text">Only PDF files are accepted.</small>
             <br>
+            <div class="button-holder">
+                <button type="submit" class="btn btn-success" name="update" style="margin: 3px">Update Changes</button>
+                <button type="reset" class="btn btn-primary" name="reset" style="margin: 3px">Reset</button>
+                <button class="btn btn-danger" style="margin: 3px"><a href="student_landing.php" class="back-a">Back</a></button>
+            </div>
         </form>
-        <button type="submit" class="btn btn-success" name="update">Update Changes</button>
-        <button type="reset" class="btn btn-primary" name="reset">Reset</button>
-        <button class="btn btn-danger"><a href="student_landing.php" class="back-a">Back</a></button>
-</body>
 <?php 
     require_once 'Includes/footer.php'; 
 ?>

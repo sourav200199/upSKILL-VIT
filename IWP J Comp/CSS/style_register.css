@@ -1,3 +1,15 @@
 #reg-body{
-    background: linear-gradient(-45deg, #f60773, #e51364, #3c0e3c, #000000);
+    background: linear-gradient(-45deg, #791643, #610b2c, #3c0e3c, #000000);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    height: 100vh;
+    width: 100vw;
 }
+
+.form1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+

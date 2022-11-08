@@ -45,35 +45,35 @@
     <h1 class="text-center register-head">Registration Form</h1>
     <br>
     <form method="post" enctype="multipart/form-data" class="form1">
-        <div class="form-group">
+        <div class="register-text" style="margin: 10px">
             <label for="firstname" class="register-text">First Name:</label>
-            <input type="text" class="form-control" id="firstname" placeholder="Enter First Name" name="fname">
+            <input type="text" class="input" id="firstname" placeholder="Enter First Name" name="fname">
         </div>
         <br/>
-        <div class="form-group">
+        <div class="register-text" style="margin: 10px">
             <label for="lastname" class="register-text">Last Name:</label>
-            <input type="text" class="form-control" id="lastname" placeholder="Enter Last Name" name="lname">
+            <input type="text" class="input" id="lastname" placeholder="Enter Last Name" name="lname">
         </div>
         <br>
-        <div class="form-group">
+        <div class="register-text" style="margin: 10px">
             <label for="phone" class="register-text">*Registration No.: </label>
-            <input type="text" class="form-control" id="regno" aria-describedby="phoneHelp" placeholder="Enter your registration number" name="regno">
-            <small id="emailHelp" class="form-text text-danger register-text">It will be set as your username for future login.</small>
+            <input type="text" class="input" id="regno" aria-describedby="phoneHelp" placeholder="Enter your registration number" name="regno">
+            <br><small id="emailHelp" class="form-text text-danger">(It will be set as your username for future login.)</small>
         </div>
         <br/>
-        <div class="form-group">
+        <div class="register-text" style="margin: 10px">
             <label for="phone" class="register-text">*Set Password: </label>
-            <input type="password" class="form-control" id="password" aria-describedby="phoneHelp" placeholder="Enter a strong password [a-zA-Z0-9$!@*]{8, *}" name="password">
+            <input type="password" class="input" id="password" aria-describedby="phoneHelp" placeholder="Enter a strong password [a-zA-Z0-9$!@*]{8, *}" name="password">
         </div>
         <br/> 
-        <div class="form-group">
+        <div class="register-text" style="margin: 10px">
             <label for="lastname" class="register-text">Date of birth:</label>
-            <input type="date" class="form-control" id="dob" placeholder="Enter Date of birth" name="dob">
+            <input type="date" class="input" id="dob" placeholder="Enter Date of birth" name="dob">
         </div>
         <br/>
-        <div class="form-group">
+        <div class="register-text" style="margin: 10px">
             <label for="speciality" class="register-text">Speciality:</label>
-            <select class="form-control" id="speciality" name="speciality">
+            <select class="input" id="speciality" name="speciality">
                 <?php
                   while ($r = $response->fetch(PDO::FETCH_ASSOC)){
                 ?>
@@ -82,27 +82,28 @@
             </select>
         </div>
         <br/>
-        <div class="form-group">
+        <div class="register-text" style="margin: 10px">
             <label for="email" class="register-text">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email id" name="email">
+            <input type="email" class="input" id="email" aria-describedby="emailHelp" placeholder="Enter your email id" name="email">
         </div>
         <br/>
-        <div class="form-group">
+        <div class="register-text" style="margin: 10px">
             <label for="phone" class="register-text">Phone No.:</label>
-            <input type="text" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Enter your phone number" name="phone">
+            <input type="text" class="input" id="phone" aria-describedby="phoneHelp" placeholder="Enter your phone number" name="phone">
         </div>
         <br/>
-        <div class="custom-file">
+        <div class="register-text" style="margin: 10px">
             <label class="custom-file-label register-text" for="resume">*Upload Resume:</label>
             <br>
             <input type="file" accept=".pdf" class="custom-file-input" id="resume" name="resume" required>
             <br>
-            <small id="phoneHelp" class="form-text text-danger register-text">Only PDF files are accepted.</small>
+            <small id="phoneHelp" class="form-text text-danger">(Only PDF files are accepted.)</small>
         </div>
         <br/>
         <div class="button">
-            <button type="submit" class="btn btn-success btn-reg" name="submit">Submit</button>
-            <button type="reset" class="btn btn-primary btn-reg" name="reset">Reset</button>
+            <button type="submit" class="btn btn-success" name="submit" style="margin: 2px">Submit</button>
+            <button type="reset" class="btn btn-primary" name="reset" style="margin: 2px">Reset</button>
+            <button class="btn btn-danger" style="margin: 2px"><a href="signup.php" class="back-a">Back</a></button>
         </div>
     </form>
 <?php 
