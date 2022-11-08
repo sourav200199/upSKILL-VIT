@@ -56,25 +56,6 @@ $response = $crud->get_speciality();
         } else 
             echo "<br><h1 class='text-center text-danger'>Error: " . $sql0 . "<br>" . mysqli_error($con1) . "</h1>";
 
-        // $sql1 = "SELECT * FROM student st INNER JOIN speciality sp on st.speciality_id = st.speciality_id WHERE regno LIKE '%$sid%'";
-        // $result1 = mysqli_query($con1, $sql1);
-        // $row = mysqli_fetch_assoc($result1);
-
-        // $nm = $row['firstname']."_".$row['lastname'];
-        // $sp = $row['name'];
-        // $cgpa = $row['cgpa'];
-
-        // $sql2 = "INSERT INTO $tablename (student_regno, student_name, student_cgpa, student_speciality) VALUES('$sid','$nm','$cgpa','$sp')";
-        // $result2 = mysqli_query($con2, $sql2);
-
-        // if ($result2) {
-        //     echo "<div class='alert alert-success'>Student added to the list.</div>";
-        // } else {
-        //     echo "<div class='alert alert-danger'>ERROR: Could not add student</div>";
-        // }
-
-        // mysqli_close($con1);
-        // mysqli_close($con2);
         mysqli_close($con1);
         mysqli_close($con2);
     }

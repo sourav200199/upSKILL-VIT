@@ -72,6 +72,7 @@ section{
 .login-box .form
 {
     position:relative;
+    text-align: center;
     width: 100%;
     z-index: 10;
 }
@@ -131,10 +132,11 @@ input[type = submit]
     letter-spacing: 0.1em;
     padding: 5px 30px;
     transition: 0.5s;
+    margin-bottom: 8px;
 }
 input[type = 'submit']:hover
 {
-    background: var(--clr);
+    background: rgb(179, 45, 89);
     color: var(--clr);
     letter-spacing: 0.25em;
     box-shadow: 0 0 35px var(--clr) ;
@@ -144,7 +146,7 @@ input[type = 'submit']:before
     content: '';
     position: absolute;
     inset: 2px;
-    background: #27282c;
+    background: palevioletred;
 }
 input[type = 'submit'] span
 {
@@ -165,7 +167,7 @@ input[type = 'submit'] i::before
     left:80%;
     width:10px;
     height: 4px;
-    background: #27282c;
+    background: palevioletred;
     transform: translateX(-50%) skew(325deg);
     transition: 0.5s;
 }
@@ -183,7 +185,7 @@ input[type = 'submit'] i::after
     left:20%;
     width:10px;
     height: 4px;
-    background: #27282c;
+    background: palevioletred;
     transform: translateX(-50%) skew(325deg);
     transition: 0.5s;
 }

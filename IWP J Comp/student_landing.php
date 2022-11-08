@@ -37,7 +37,7 @@ $response = $crud->get_student($_SESSION['username']);
                     <p>
                         Employers ask for your most recent resume and other details. 
                         Make sure you update it time to time so that your most recent profile is displayed.
-                    </p>
+                    </p><br>
                     <a href="edit_record.php?" class="btn-landing">Edit Profile</a>
                 </div>
             </div>
@@ -68,12 +68,25 @@ $response = $crud->get_student($_SESSION['username']);
             </div>
             <div class="card">
                 <div class="card-header">
+                    <img class="gif" src="Images/interview.gif">
+                </div>
+                <div class="card-body">
+                    <p>
+                        Check whether you have been selected for an internship call or not by clicking on the button below.
+                        (You need to enter the company ID provided by the university.)
+                        <br>
+                    </p>
+                    <a href="check_selection.php" class="btn-landing">Check Selection</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
                     <img class="gif" src="Images/view.webp">
                 </div>
                 <div class="card-body">
                     <p>
                         You can view the list of students from the university who has applied for internships by clicking the button below.
-                        <br><br>
+                        <br><br><br>
                     </p>
                     <a href="record.php" class="btn-landing">View Students' List</a>
                 </div>

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="CSS/style_view.css">
     <link rel="stylesheet" href="CSS/style_signup.css">
     <link rel="stylesheet" href="CSS/style_password.css">
+    <link rel="stylesheet" href="CSS/style_selection.css">
     <link rel="stylesheet" href="CSS/style_emp_studentlist.css">
     <link rel="stylesheet" href="CSS/style_emp_landing.css">
     <link rel="stylesheet" href="CSS/style_header.css">
@@ -74,7 +75,7 @@
               else
               { 
                 ?>
-                <a class="nav-item reg-login" href="logout.php" class="register-text">Logout: <span class="sr-only register-text"><?php echo $_SESSION['username'];?></span></a>
+                <a class="nav-item reg-login register-text" href="logout.php">Logout: <?php echo $_SESSION['username'];?></a>
                 <?php
               }
               ?>
