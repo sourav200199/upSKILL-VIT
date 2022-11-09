@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="CSS/style_signup.css">
     <link rel="stylesheet" href="CSS/style_password.css">
     <link rel="stylesheet" href="CSS/style_selection.css">
+    <link rel="stylesheet" href="CSS/style_services.css">
     <link rel="stylesheet" href="CSS/style_emp_studentlist.css">
+    <link rel="stylesheet" href="CSS/style_about.css">
     <link rel="stylesheet" href="CSS/style_emp_landing.css">
     <link rel="stylesheet" href="CSS/style_header.css">
   </head>

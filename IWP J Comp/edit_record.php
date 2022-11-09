@@ -73,7 +73,7 @@
         </div>
         <br/>
         <div class="form-group">
-            <label for="lastname" class="register-text" value="<?php echo $student['dob'];?>">CGPA:</label>
+            <label for="lastname" class="register-text" value="<?php echo $student['dob'];?>" required>CGPA:</label>
             <input type="text" class="input" id="cgpa" name="cgpa">
         </div>
         <br/>

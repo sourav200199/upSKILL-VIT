@@ -44,11 +44,11 @@ $response = $crud->get_speciality();
                     $sql2 = "INSERT INTO $tablename (student_regno, student_name, student_cgpa, student_speciality) VALUES('$sid','$nm','$cgpa','$sp')";
                     $result2 = mysqli_query($con2, $sql2);
 
-                    if ($result2) {
+                    //if ($result2) {
                         echo "<div class='alert alert-success'>Student added to the list.</div>";
-                    } else {
-                        echo "<div class='alert alert-danger'>ERROR: Could not add student</div>";
-                    }
+                    //} else {
+                    //    echo "<div class='alert alert-danger'>ERROR: Could not add student</div>";
+                    //}
                 } 
                 else 
                     echo "<br><h1 class='text-center text-danger'>Student already in your list!</h1>";
@@ -105,12 +105,14 @@ if (isset($_POST['search'])) {
         echo "<th scope='col' class='table-head'>Resume</th>";
         echo "<th scope='col' class='table-head'>Action</th>";
         echo "</tr></thead><tbody>";
-    
+        
+        $self = $_SERVER['PHP_SELF'];
+
         if($result1 == false)
         {
             echo "<div class='alert alert-danger'>No students found.</div>";
-            echo "</tbody></table>";
-            echo "<input type='submit' name='submitall' value='Add All' class='btn btn-primary s_all'>";
+            echo "</tbody></table><form method='post' target='_self'>";
+            echo "<input type='submit' name='submitall' value='Add All' class='btn btn-primary s_all'></form>";
             echo "</div>";
         }
         else{
