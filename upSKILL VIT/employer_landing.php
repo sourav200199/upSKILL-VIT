@@ -4,6 +4,16 @@
     require_once 'Includes/authentication_check.php';
     require_once "Includes/header.php";
 ?>
+<head>
+    <script type="text/javascript">
+        function preventBack()
+        {
+            window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function(){null;};
+    </script>
+</head>
 <body id="reg-body1">
     <br>
     <br>

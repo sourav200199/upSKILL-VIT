@@ -50,7 +50,16 @@ if (isset($_POST['login_employer'])) {
     mysqli_close($con);
 }
 ?>
-
+<head>
+    <script type="text/javascript">
+        function preventBack()
+        {
+            window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function(){null;};
+    </script>
+</head>
 <body id="body-login">
     <section>
         <div class="container-login">
